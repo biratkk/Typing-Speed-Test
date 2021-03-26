@@ -7,7 +7,7 @@
         <link rel = "icon" href = "favicon.png">
         <title>TypeSpeed</title>
     </head>
-    <body tabindex="0" onkeypress = "typed(event)">
+    <body class = "dark-theme" tabindex="0" onkeypress = "typed(event)">
         <div id = "root" >
             <div class = "parent1" >
                 <p id = "words">
@@ -28,14 +28,10 @@
                     60
                 </button>
             </div>
-            <div class = "parent2">
-                <p style = "
-                    color:white;
-                    background-color: none;
-                    font-size: 10px;
-                ">
-                    Default is set to 15s
-                </p>
+            <div class = "parent2 short">
+                <button onclick="changeDisplayMode()" class = "mode-button" id = "modebutton">
+                    <img src = "/sun_52px.png" id = "display-mode-picture"/>
+                </button>
             </div>
         </div>
     </body>

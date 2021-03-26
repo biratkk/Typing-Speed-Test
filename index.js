@@ -14,6 +14,7 @@ let currentTimer = 15;
 let startTime;
 let endTime;
 
+let darkMode = true;
 $(document).ready(()=>{
     initialise();
     document.getElementById("firstTimer").focus();
@@ -57,11 +58,23 @@ async function initialise(){
     letterNodes = document.getElementById("words").childNodes;
 }   
 
+/**
+ * In case of typed
+ */
 function typed(event){
     let char = event.which || event.keyCode;
+    //the character which is typed is recorded
     let str = String.fromCharCode(char);
-    console.log(`${str}?${letterNodes[current].innerHTML}`);
+    //the character is then converted to a String from the char code
+    
+    if(currentTimer===0){
+        document.getElementById("firstTimer").focus();
+        currentTimer=15;
+    }
+
     if(str===letterNodes[current].innerHTML || letterNodes[current].innerHTML === " "){
+    //if the current letter matches the character typed the score is appended
+    //if the current word is the first letter then timer is started
         if(current==1){
             startTimer();
         }
@@ -74,6 +87,8 @@ function typed(event){
     totalChars++;
     current++;
     checkToEndTimer();
+    //checks if timer has ended everytime they type a character
+    //room for error here and thus room for improvement
 }
 
 //starts the timer for the typing
@@ -96,11 +111,31 @@ function checkToEndTimer(){
 
 function end(){
     const wpm = (60/currentTimer)*(correct/5);
-    alert(`Your typing speed is ${wpm}`);
+    alert(`Your typing speed is ${wpm} words per minute.`);
     window.location.reload();
 }
 
 //changes the current time you can take to complete the typing
 function changeCurrentTime(event){
     currentTimer = parseInt(event.target.innerHTML);
+}
+
+/**
+ * function to toggle dark mode 
+ * and light mode
+ */
+function changeDisplayMode(){
+
+    //changes the display mode of the entire document
+    document.querySelector("body").classList.toggle("dark-theme");
+    document.querySelector("body").classList.toggle("light-theme");
+    darkMode = !darkMode;
+
+    //shifts the focus to the darkmode button
+    currentTimer = 0;
+
+    //changes the src of the picture
+    document.getElementById("display-mode-picture")
+    .src = darkMode ? 
+    "/sun_52px.png": "/night_100px.png";
 }
