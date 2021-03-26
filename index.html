@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href = "styles.css" rel = "stylesheet">
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src = "index.js" type = "text/javascript"></script>
+        <link rel = "icon" href = "favicon.png">
+        <title>TypeSpeed</title>
+    </head>
+    <body tabindex="0" onkeypress = "typed(event)">
+        <div id = "root" >
+            <div class = "parent1" >
+                <p id = "words">
+                    
+                </p>
+            </div>
+            <div class = "parent2">
+                <button id = "firstTimer" onmousedown = "changeCurrentTime(event)">
+                    15
+                </button>
+                <button onmousedown = "changeCurrentTime(event)">
+                    30
+                </button>
+                <button onmousedown = "changeCurrentTime(event)">
+                    45
+                </button>
+                <button onmousedown = "changeCurrentTime(event)">
+                    60
+                </button>
+            </div>
+            <div class = "parent2">
+                <p style = "
+                    color:white;
+                    background-color: none;
+                    font-size: 10px;
+                ">
+                    Default is set to 15s
+                </p>
+            </div>
+        </div>
+    </body>
+</html>
