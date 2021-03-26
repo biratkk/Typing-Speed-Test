@@ -5,7 +5,7 @@ If you want to use this code the documentation/guide on cloning can be found [he
 
 After cloning the repo, open any terminal and change the directory to the folder that this repo is stored in.
 
-To run the program, there are two options in the terminal:
+As of now you can only run the program from the terminal through these two options:
 
 1. Use `npm start` as I have assigned this to the starting of the http-server in the default port.
 
