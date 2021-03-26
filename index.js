@@ -137,5 +137,5 @@ function changeDisplayMode(){
     //changes the src of the picture
     document.getElementById("display-mode-picture")
     .src = darkMode ? 
-    "/sun_52px.png": "/night_100px.png";
+    "/icons/sun_52px.png": "/icons/night_100px.png";
 }
